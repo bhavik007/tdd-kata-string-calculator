@@ -4,20 +4,18 @@ const { identifyDelimiter, identifyNegativeNumbers } = require("./utils");
 class StringCalculator {
     add(input) {
 
-        if (input.length === 0 && input === "") return 0;
+        // value with blank string
+        if (!input) return 0;
 
+        // value with only number in string
         if (!isNaN(input)) {
             return parseInt(input)
         }
 
-
+        // identify all the delimiters and prepare string 
         const {delimiter, numberString} = identifyDelimiter(input);
 
-        
         const numList = numberString.split(delimiter);
-        console.log({delimiter, numberString, numList})
-
-
         
         // Negative numbers
         let negativeNumbers = identifyNegativeNumbers(numList);
