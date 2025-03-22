@@ -2,14 +2,17 @@ const identifyDelimiter = (input) => {
     if (input.startsWith("//") && input.indexOf("\n") > -1) {
         const newLineIndex = input.indexOf("\n");
         const delimiter = input.substring(2, newLineIndex);
+
+
+        let matches = delimiter.match(/(?<=\[)[^\]]+(?=\])/g);
+        let escapedDelimiter = matches.join('|');
+
+        const numberString = input.substring(newLineIndex + 1);
         
-        return delimiter;
-    }
-    if (input.indexOf('\n')) {
-        return '\n'
+        return { delimiter: new RegExp(escapedDelimiter), numberString };
     }
 
-    return ',';
+    return {delimiter: /,|\n/, numberString: input};
 }
 
 const identifyNegativeNumbers = (numberList) => {

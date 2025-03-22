@@ -10,15 +10,22 @@ class StringCalculator {
             return parseInt(input)
         }
 
-        const delimiter = identifyDelimiter(input);
-        const numList = input.split(delimiter);
 
-        let negativeNumbers = identifyNegativeNumbers(numList);
+        const {delimiter, numberString} = identifyDelimiter(input);
 
         
+        const numList = numberString.split(delimiter);
+        console.log({delimiter, numberString, numList})
+
+
+        
+        // Negative numbers
+        let negativeNumbers = identifyNegativeNumbers(numList);
         if (negativeNumbers.length > 0) {
             return "negative numbers not allowed " + negativeNumbers.toString();
         }
+
+        // Sum of all the numbers
         let sum = numList.reduce((prev, curr) => prev + parseInt(curr), 0)
 
         return sum;

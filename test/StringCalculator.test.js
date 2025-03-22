@@ -34,8 +34,9 @@ describe('TDD Kata String Calculator', () => {
 
       test("should return the sum of the numbers with multiple delimiters", () => {
         expect(calculator.add("//[;][,]\n1;2,3")).toBe(6); 
+        expect(calculator.add("//[;][,]\n1;2,3")).toBe(6); 
         expect(calculator.add("//[;;][,,]\n1;;7")).toBe(8);
-        expect(calculator.add("//[;;][,,]\n9;;7,,7")).toBe(17);
+        expect(calculator.add("//[;;][,,]\n9;;7,,7")).toBe(23);
       });
 
 
