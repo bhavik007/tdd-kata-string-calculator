@@ -2,16 +2,13 @@
   "name": "tdd-string-calculator",
   "version": "1.0.0",
   "description": "",
-  "main": "./src/index.js",
   "scripts": {
-    "start": "node ./src/index.js",
     "test": "jest"
   },
-  "keywords": ["TDD", "String Calculator", "TDD Kata"],
+  "keywords": ["TDD", "String Calculator", "TDD Kata"], 
   "author": "Bhavik Manek",
   "license": "ISC",
   "devDependencies": {
-    "jest": "^29.7.0",
-    "typescript": "^5.8.2"
+    "jest": "^29.7.0"
   }
 }
